@@ -1,5 +1,5 @@
 ### Get comments for a post
-GET http://localhost:4001/posts/2/comments
+GET http://localhost:4001/posts/1/comments
 
 ### Post a new comment for a post
 POST http://localhost:4001/posts/2/comments

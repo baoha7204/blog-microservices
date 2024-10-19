@@ -4,14 +4,17 @@ import { commentsAxios } from "../../config/axios";
 import { API_ENDPOINTS } from ".";
 
 const commentsApi = {
-  async getAll(signal) {
-    return await commentsAxios.get(API_ENDPOINTS.COMMENTS.LIST, {
-      signal,
-    });
-  },
-  async getOne(id, commentId, signal) {
+  async getAllByPost(postid, signal) {
     return await commentsAxios.get(
-      generatePath(API_ENDPOINTS.COMMENTS.ONE, { id, commentId }),
+      generatePath(API_ENDPOINTS.COMMENTS.LIST, { id: postid }),
+      {
+        signal,
+      }
+    );
+  },
+  async getOne(postId, commentId, signal) {
+    return await commentsAxios.get(
+      generatePath(API_ENDPOINTS.COMMENTS.ONE, { id: postId, commentId }),
       {
         signal,
       }

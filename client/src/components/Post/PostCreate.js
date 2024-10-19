@@ -1,5 +1,5 @@
 import { useState } from "react";
-import postsApi from "./utils/api/postsApi";
+import postsApi from "../../utils/api/postsApi";
 
 const PostCreate = () => {
   const [title, setTitle] = useState("");
