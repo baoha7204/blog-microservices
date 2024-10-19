@@ -1,8 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 let commentId = 0;
 const commentByPostId = {};
@@ -10,6 +12,11 @@ const commentByPostId = {};
 app.get("/posts/:id/comments", (req, res) => {
   const { id } = req.params;
   res.send(commentByPostId[id] || []);
+});
+
+app.get("/posts/:id/comments/:commentId", (req, res) => {
+  const { id, commentId } = req.params;
+  res.send(commentByPostId[id][commentId] || {});
 });
 
 app.post("/posts/:id/comments", (req, res) => {

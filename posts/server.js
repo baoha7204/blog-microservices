@@ -1,14 +1,21 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 let id = 0;
 const posts = {};
 
 app.get("/posts", (req, res) => {
   res.send(posts);
+});
+
+app.get("/posts/:id", (req, res) => {
+  const { id } = req.params;
+  res.send(posts[id] || {});
 });
 
 app.post("/posts", (req, res) => {
@@ -18,7 +25,6 @@ app.post("/posts", (req, res) => {
     id,
     title,
   };
-  console.log(posts[id]);
   res.status(201).send(posts[id]);
 });
 
