@@ -1,0 +1,10 @@
+### Get comments for a post
+GET http://localhost:4001/posts/2/comments
+
+### Post a new comment for a post
+POST http://localhost:4001/posts/2/comments
+content-type: application/json
+
+{
+    "content": "nope"
+}
