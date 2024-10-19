@@ -1,20 +1,6 @@
-import { useEffect, useState } from "react";
-
 import Comment from "./Comment";
-import commentsApi from "../../utils/api/commentsApi";
 
-const CommentList = ({ postId }) => {
-  const [comments, setComments] = useState({});
-
-  const fetchComments = async (id) => {
-    const res = await commentsApi.getAllByPost(id);
-    setComments(res.data);
-  };
-
-  useEffect(() => {
-    fetchComments(postId);
-  }, [postId]);
-
+const CommentList = ({ comments }) => {
   return (
     <ul>
       {Object.values(comments).map((comment) => (

@@ -14,4 +14,11 @@ const commentsAxios = axios.create({
   },
 });
 
-export { postsAxios, commentsAxios };
+const queryAxios = axios.create({
+  baseURL: "http://localhost:4002",
+  headers: {
+    "Content-type": "application/json",
+  },
+});
+
+export { postsAxios, commentsAxios, queryAxios };
