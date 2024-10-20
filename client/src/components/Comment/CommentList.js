@@ -4,7 +4,7 @@ const CommentList = ({ comments }) => {
   return (
     <ul>
       {Object.values(comments).map((comment) => (
-        <Comment key={comment.id} id={comment.id} content={comment.content} />
+        <Comment key={comment.id} comment={comment} />
       ))}
     </ul>
   );
