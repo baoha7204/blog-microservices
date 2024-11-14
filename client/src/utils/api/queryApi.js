@@ -1,9 +1,9 @@
 import { API_ENDPOINTS } from ".";
-import { queryAxios } from "../../config/axios";
+import { customAxios } from "../../config/axios";
 
 const queryApi = {
   async getPosts(signal) {
-    return await queryAxios.get(API_ENDPOINTS.POSTS.LIST, { signal });
+    return await customAxios.get(API_ENDPOINTS.POSTS.LIST, { signal });
   },
 };
 

@@ -1,11 +1,11 @@
 import { generatePath } from "react-router-dom";
 
-import { commentsAxios } from "../../config/axios";
+import { customAxios } from "../../config/axios";
 import { API_ENDPOINTS } from ".";
 
 const commentsApi = {
   async getAllByPost(postid, signal) {
-    return await commentsAxios.get(
+    return await customAxios.get(
       generatePath(API_ENDPOINTS.COMMENTS.LIST, { id: postid }),
       {
         signal,
@@ -13,7 +13,7 @@ const commentsApi = {
     );
   },
   async getOne(postId, commentId, signal) {
-    return await commentsAxios.get(
+    return await customAxios.get(
       generatePath(API_ENDPOINTS.COMMENTS.ONE, { id: postId, commentId }),
       {
         signal,
@@ -21,7 +21,7 @@ const commentsApi = {
     );
   },
   async create(id, data, signal) {
-    return await commentsAxios.post(
+    return await customAxios.post(
       generatePath(API_ENDPOINTS.COMMENTS.LIST, { id }),
       { content: data },
       {

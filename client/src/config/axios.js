@@ -1,24 +1,10 @@
 import axios from "axios";
 
-const postsAxios = axios.create({
-  baseURL: "http://localhost:4000",
+const customAxios = axios.create({
+  baseURL: "http://posts.com",
   headers: {
     "Content-type": "application/json",
   },
 });
 
-const commentsAxios = axios.create({
-  baseURL: "http://localhost:4001",
-  headers: {
-    "Content-type": "application/json",
-  },
-});
-
-const queryAxios = axios.create({
-  baseURL: "http://localhost:4002",
-  headers: {
-    "Content-type": "application/json",
-  },
-});
-
-export { postsAxios, commentsAxios, queryAxios };
+export { customAxios };
