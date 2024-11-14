@@ -19,7 +19,7 @@ app.get("/posts/:id", (req, res) => {
   res.send(posts[id] || {});
 });
 
-app.post("/posts", (req, res) => {
+app.post("/posts/create", (req, res) => {
   const { title } = req.body;
   const id = randomBytes(6).toString("hex");
   posts[id] = {

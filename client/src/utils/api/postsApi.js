@@ -19,7 +19,7 @@ const postsApi = {
   },
   async create(data, signal) {
     return await customAxios.post(
-      API_ENDPOINTS.POSTS.LIST,
+      `${API_ENDPOINTS.POSTS.LIST}/create`,
       { title: data },
       {
         signal,
